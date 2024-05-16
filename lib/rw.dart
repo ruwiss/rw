@@ -22,6 +22,7 @@ export 'src/core/clients/network_client.dart';
 export 'src/core/base/base_viewmodel.dart';
 
 // Dependencies
+export 'package:flutter_animate/flutter_animate.dart';
 export 'package:provider/provider.dart';
 export 'package:dio/dio.dart';
 
