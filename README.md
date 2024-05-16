@@ -12,3 +12,5 @@ Ruwis tarafından oluşturulan Flutter yardımcı paketi.
 - Package Info
 - Device Oriantation
 - Dependency Injection
+- Fluent Icons
+- Fluid Dialog

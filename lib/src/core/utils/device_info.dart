@@ -1,10 +1,15 @@
-import 'dart:io';
-
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:uuid/uuid.dart';
+import 'dart:io';
 
 final class DeviceInfoUtils {
+  static final DeviceInfoUtils _instance = DeviceInfoUtils._();
+
+  factory DeviceInfoUtils() {
+    return _instance;
+  }
+
   DeviceInfoUtils._();
 
   static late final DeviceInfoPlugin _deviceInfo;

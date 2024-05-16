@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'base_theme.dart';
 
-final class DarkTheme extends BaseTheme {
+final class BaseDarkTheme extends BaseTheme {
   @override
   Brightness get brightness => Brightness.dark;
 

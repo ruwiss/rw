@@ -3,7 +3,7 @@ import 'package:rw/rw.dart';
 
 /// Contains ViewModel functionality for busy and error state management
 class BaseViewModel extends ChangeNotifier with BusyAndErrorStateHelper {
-  final NetworkClient networkClient = Locator.networkClient;
+  final NetworkClient networkClient = Rw.networkClient;
   void rebuildUi() => notifyListeners();
 }
 
