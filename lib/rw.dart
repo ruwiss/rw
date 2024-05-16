@@ -61,7 +61,7 @@ abstract final class Rw {
   static DeviceInfoUtils get deviceInfoUtils => DeviceInfoUtils();
 
   /// [FluentIcons] instance
-  static FluentIcons get icons => FluentIcons();
+  static FluentIcons icons = FluentIcons();
 
   /// Dialog
   static FluidDialog dialog(FluidDialogPage dialogPage) {

@@ -9,17 +9,17 @@ final class PackageInfoUtils {
 
   PackageInfoUtils._();
 
-  static late final PackageInfo _packageInfo;
+  late final PackageInfo _packageInfo;
 
-  static Future<void> init() async {
+  Future<void> init() async {
     _packageInfo = await PackageInfo.fromPlatform();
   }
 
-  static String getAppVersion() {
+  String getAppVersion() {
     return _packageInfo.version;
   }
 
-  static String getAppName() {
+  String getAppName() {
     return _packageInfo.appName;
   }
 }

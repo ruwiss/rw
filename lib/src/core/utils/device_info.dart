@@ -12,13 +12,13 @@ final class DeviceInfoUtils {
 
   DeviceInfoUtils._();
 
-  static late final DeviceInfoPlugin _deviceInfo;
+  late final DeviceInfoPlugin _deviceInfo;
 
-  static Future<void> init() async {
+  Future<void> init() async {
     _deviceInfo = DeviceInfoPlugin();
   }
 
-  static Future<String?> getDeviceId() async {
+  Future<String?> getDeviceId() async {
     if (Platform.isIOS) {
       final iosDeviceInfo = await _deviceInfo.iosInfo;
       return iosDeviceInfo.identifierForVendor;
@@ -32,7 +32,7 @@ final class DeviceInfoUtils {
     }
   }
 
-  static Future<String?> getDeviceInfo() async {
+  Future<String?> getDeviceInfo() async {
     if (Platform.isIOS) {
       final iosDeviceInfo = await _deviceInfo.iosInfo;
       return iosDeviceInfo.utsname.machine;
@@ -47,7 +47,7 @@ final class DeviceInfoUtils {
     }
   }
 
-  static String getPlatformName() {
+  String getPlatformName() {
     if (Platform.isIOS) {
       return 'IOS';
     } else if (Platform.isAndroid) {
