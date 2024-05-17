@@ -33,8 +33,8 @@ abstract final class Rw {
   /// Init Dependency Injection
   static Future<void> init({
     required Iterable<Future> futures,
-    required FutureOr<Widget> Function() builder,
     required Map<String, dynamic> envParams,
+    required FutureOr<Widget> Function() builder,
   }) async {
     FlutterError.onError = (details) {
       log(details.exceptionAsString(), stackTrace: details.stack);
