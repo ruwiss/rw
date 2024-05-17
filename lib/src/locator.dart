@@ -11,8 +11,8 @@ abstract final class RwLocator {
       {required Map<String, dynamic> envParams}) async {
     instance
       // Clients
-      ..registerLazySingleton<NetworkClient>(
-          () => NetworkClient(dio: instance(), baseUrl: envParams['BASE_URL']))
+      ..registerLazySingleton<NetworkClient>(() =>
+          NetworkClient(dio: instance(), baseUrl: envParams['BASE_URL'] ?? ''))
       // Client Dependencies
       ..registerFactory<Dio>(Dio.new);
   }

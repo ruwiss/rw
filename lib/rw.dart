@@ -41,8 +41,9 @@ abstract final class Rw {
     };
     await runZonedGuarded<Future<void>>(
       () async {
-        await Future.wait(
-            [RwLocator.locateServices(envParams: envParams), ...futures]);
+        WidgetsFlutterBinding.ensureInitialized();
+        await Future.wait([RwLocator.locateServices(envParams: envParams)]);
+        await Future.wait(futures);
         runApp(await builder());
       },
       (error, stackTrace) {
