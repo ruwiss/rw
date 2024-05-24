@@ -32,12 +32,14 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   fonts:
+    # Regular
     - family: FluentSystemIcons-Regular
       fonts:
-        - asset: packages/fluentui_system_icons/fonts/FluentSystemIcons-Regular.ttf
+        - asset: fonts/FluentSystemIcons-Regular.ttf
+    # Filled
     - family: FluentSystemIcons-Filled
       fonts:
-        - asset: packages/fluentui_system_icons/fonts/FluentSystemIcons-Filled.ttf
+        - asset: fonts/FluentSystemIcons-Filled.ttf
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
