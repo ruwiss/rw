@@ -1,5 +1,6 @@
+import 'package:rw/src/core/clients/network_client.dart';
 import 'package:flutter/material.dart';
-import 'package:rw/rw.dart';
+import 'package:rw/src/main.dart';
 
 /// Contains ViewModel functionality for busy and error state management
 class BaseViewModel extends ChangeNotifier with BusyAndErrorStateHelper {

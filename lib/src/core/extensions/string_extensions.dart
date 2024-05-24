@@ -1,6 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/widgets.dart';
+import 'dart:convert';
 
 extension StringExtension on String {
   /// Capitalizes the `String` in normal form.
