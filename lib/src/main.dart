@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 import 'core/clients/network_client.dart';
 import 'core/utils/device_info.dart';
-import 'core/utils/icons.dart';
 import 'core/utils/package_info.dart';
 import 'dart:developer';
 import 'locator.dart';
@@ -44,9 +43,6 @@ abstract final class Rw {
 
   /// [DeviceInfoUtils] instance
   static DeviceInfoUtils get deviceInfoUtils => DeviceInfoUtils();
-
-  /// [FluentIcons] instance
-  static FluentIcons icons = FluentIcons();
 
   /// Dialog
   static FluidDialog dialog(FluidDialogPage dialogPage) {
