@@ -14,3 +14,4 @@ Ruwis tarafından oluşturulan Flutter yardımcı paketi.
 - Dependency Injection
 - Fluid Dialog
 - Animate
+- URL Launcher

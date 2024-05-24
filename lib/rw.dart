@@ -17,3 +17,4 @@ export 'src/main.dart';
 export 'package:flutter_animate/flutter_animate.dart';
 export 'package:provider/provider.dart';
 export 'package:dio/dio.dart';
+export 'package:url_launcher/url_launcher.dart';
