@@ -9,6 +9,7 @@ export 'src/app/theme/dark_theme.dart';
 export 'src/core/extensions/context_extensions.dart';
 export 'src/core/clients/network_client.dart';
 export 'src/core/base/base_viewmodel.dart';
+export 'src/main.dart';
 
 // Dependencies
 export 'package:flutter_animate/flutter_animate.dart';
