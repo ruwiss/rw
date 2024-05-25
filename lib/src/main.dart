@@ -54,14 +54,4 @@ abstract final class Rw {
   /// [DeviceInfoUtils] instance
   static DeviceInfoUtils get deviceInfoUtils => DeviceInfoUtils();
 
-  /// Dialog
-  static FluidDialog dialog(FluidDialogPage dialogPage) {
-    return FluidDialog(rootPage: dialogPage);
-  }
-
-  /// Dialog page
-  static FluidDialogPage dialogPage(
-      {required Widget Function(BuildContext) builder}) {
-    return FluidDialogPage(builder: builder);
-  }
 }
