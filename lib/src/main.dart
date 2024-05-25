@@ -16,7 +16,7 @@ abstract final class Rw {
   /// Init Dependency Injection
   static Future<void> init({
     required Iterable<Future> futures,
-    required Iterable<VoidCallback> functions,
+    required Iterable<void Function()> functions,
     required Map<String, dynamic> envParams,
     required List<SingleChildWidget> providers,
     required FutureOr<Widget> Function() builder,
@@ -28,7 +28,9 @@ abstract final class Rw {
       () async {
         WidgetsFlutterBinding.ensureInitialized();
         await Future.wait([RwLocator.locateServices(envParams: envParams)]);
-        functions.map((e) => e.call());
+        for (var func in functions) {
+          func();
+        }
         await Future.wait(futures);
         runApp(
           MultiProvider(
