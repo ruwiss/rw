@@ -16,7 +16,7 @@ abstract final class Rw {
   /// Init Dependency Injection
   static Future<void> init({
     required Iterable<Future> futures,
-    required Iterable<Function> functions,
+    required Iterable<Function()> functions,
     required Map<String, dynamic> envParams,
     required List<SingleChildWidget> providers,
     required FutureOr<Widget> Function() builder,
