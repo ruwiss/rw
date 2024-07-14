@@ -1,4 +1,4 @@
-import 'package:fluid_dialog/fluid_dialog.dart';
+import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
@@ -15,9 +15,8 @@ GetIt get locator => RwLocator.instance;
 abstract final class Rw {
   /// Init Dependency Injection
   static Future<void> init({
-    required Iterable<Future> futures,
-    required Iterable<void Function()> functions,
     required Map<String, dynamic> envParams,
+    required Iterable<FutureOr<void>> functions,
     required List<SingleChildWidget> providers,
     required FutureOr<Widget> Function() builder,
   }) async {
@@ -27,11 +26,8 @@ abstract final class Rw {
     await runZonedGuarded<Future<void>>(
       () async {
         WidgetsFlutterBinding.ensureInitialized();
-        await Future.wait([RwLocator.locateServices(envParams: envParams)]);
-        for (var func in functions) {
-          func();
-        }
-        await Future.wait(futures);
+        await RwLocator.locateServices(envParams: envParams);
+        functions.map((func) async => await func());
         runApp(
           MultiProvider(
             providers: providers,
@@ -40,7 +36,7 @@ abstract final class Rw {
         );
       },
       (error, stackTrace) {
-        log(error.toString(), stackTrace: stackTrace);
+        ("(error)", error: error, stackTrace: stackTrace);
       },
     );
   }
@@ -53,5 +49,4 @@ abstract final class Rw {
 
   /// [DeviceInfoUtils] instance
   static DeviceInfoUtils get deviceInfoUtils => DeviceInfoUtils();
-
 }

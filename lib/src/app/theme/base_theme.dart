@@ -6,7 +6,6 @@ abstract class BaseTheme {
 
   ThemeData get theme {
     return ThemeData(
-      useMaterial3: true,
       brightness: brightness,
       colorScheme: colorScheme,
       typography: Typography.material2021(),

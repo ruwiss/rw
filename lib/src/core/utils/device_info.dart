@@ -47,6 +47,7 @@ final class DeviceInfoUtils {
     }
   }
 
+  /// "ANDROID", "IOS", "WEB", "UNKNOWN"
   String getPlatformName() {
     if (Platform.isIOS) {
       return 'IOS';
